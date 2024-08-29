@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer analizador web</title>
+    <style>
+        .resultados {
+            border: 2px solid #000;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mi primer analizador léxico</h1>
+    <form method="post">
+        <textarea name="text" rows="10" cols="50"> {{ text }}</textarea>
+        <input type="submit" value="Analizar">
+    </form>
+    {% if tokens %}
+    <div class="resultados">
+        <h2>Tokens</h2>
+        <ul>
+            {% for token in tokens %}
+            <li> {{ token }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>
